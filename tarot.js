@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
-const $_BIRTHYEAR = process.argv[3];
-const $_M = process.argv[4];
-const $_D = process.argv[5];
-const $_ENDYEAR = process.argv[6];
+const _BIRTHYEAR = process.argv[3];
+const _M = process.argv[4];
+const _D = process.argv[5];
+const _ENDYEAR = process.argv[6];
+
+
+if (_BIRTHYEAR > _ENDYEAR) {
+  console.error("Birth year must be less than or equal to end year.");
+  return false;
+}
 
 
 const majorArcana = [
@@ -48,12 +54,6 @@ const addDates = (y, m, d) => {
 
 
 const getChart = (birthYear, m, d, endYear) => {
-
-  if (birthYear > endYear) {
-    console.error("getUniversal(): Birth year must be less than or equal to end year.");
-    return false;
-  }
-
   let r = [];
   let age = 0;
   let uni = 0;
@@ -67,7 +67,6 @@ const getChart = (birthYear, m, d, endYear) => {
       growth: card(n)
     });
   }
-
   return r;
 }
 
@@ -80,4 +79,4 @@ const printTSV = (birthYear, m, d, endYear) => {
 }
 
 
-printTSV($_BIRTHYEAR, $_M, $_D, $_ENDYEAR);
+printTSV(_BIRTHYEAR, _M, _D, _ENDYEAR);
