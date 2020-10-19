@@ -1,24 +1,3 @@
-#!/usr/bin/env node
-
-const argv = process.argv.slice(2);
-const _BIRTHYEAR = parseInt(argv[0]);
-const _M = parseInt(argv[1]);
-const _D = parseInt(argv[2]);
-const _ENDYEAR = argv[3] ? parseInt(argv[3]) : parseInt(_BIRTHYEAR) + 60;
-
-
-if (!(_BIRTHYEAR && _M && _D && _ENDYEAR)) {
-  console.log('Usage: node tarot.js <birthyear 1999> <month 01> <day 04> <endyear 2020>');
-  return;
-}
-
-
-if (_BIRTHYEAR > _ENDYEAR) {
-  console.error("Birth year must be less than or equal to end year.");
-  return false;
-}
-
-
 const majorArcana = [
   'Fool',
   'Magician',
@@ -45,20 +24,19 @@ const majorArcana = [
 ];
 
 
-const card = (n, type) => {
+card = (n, type) => {
   return `${n} ${majorArcana[n]}`;
 }
 
 
-const combineStrAndAdd = (number) => {
+combineStrAndAdd = (number) => {
   const numStr = number.toString();
   const numSplit = numStr.split('').map((n) => parseInt(n));
   return combineAndAdd(numSplit);
 }
 
 
-const combineAndAdd = function () {
-
+combineAndAdd = function () {
   let numbers = [...arguments];
 
   if (typeof numbers[0] === "object") {
@@ -77,7 +55,7 @@ const combineAndAdd = function () {
 }
 
 
-const getChart = (birthYear, m, d, endYear) => {
+getChart = (birthYear, m, d, endYear) => {
   let r = [];
   let age = 0;
   let uni = 0;
@@ -95,12 +73,10 @@ const getChart = (birthYear, m, d, endYear) => {
 }
 
 
-const printTSV = (chart) => {
-  console.log("Year\tAge\tGrowth\tUniversal");
+getTSV = (chart) => {
+  let str = "Year\tAge\tGrowth\tUniversal\n";
   chart.map((c) => {
-    console.log(`${c.year}\t${c.age}\t${c.growth}\t${c.uni}`);
+    str += `${c.year}\t${c.age}\t${c.growth}\t${c.uni}\n`;
   });
+  return str;
 }
-
-
-printTSV(getChart(_BIRTHYEAR, _M, _D, _ENDYEAR));

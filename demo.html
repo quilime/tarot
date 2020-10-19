@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>tarot</title>
+  <script src="tarot.js"></script>
+</head>
+<body>
+
+Year <input type="text" id="BirthYear"><br />
+Month <input type="text" id="M"><br />
+Day <input type="text" id="D"><br />
+End Year <input type="text" id="EndYear"><br />
+<button onClick="calc();">Calc</button><br />
+<textarea id="console" style="width:600px;height:400px;"></textarea>
+
+<script>
+
+  const $ = (id) => {
+    return document.getElementById(id);
+  }
+
+  const calc = () => {
+    const _BIRTHYEAR = $("BirthYear").value;
+    const _M = $("M").value;
+    const _D = $("D").value;
+    const _ENDYEAR = $("EndYear").value;
+    $("console").value = getTSV(getChart(_BIRTHYEAR, _M, _D, _ENDYEAR));
+  }
+
+</script>
