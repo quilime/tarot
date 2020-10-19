@@ -10,7 +10,7 @@ const majorArcana = [
   'Adjustment/Justice',
   'Hermit',
   'Wheel of Fortune',
-  'Strength/List',
+  'Strength/Lust',
   'Hanged Man',
   'Death/Rebirth',
   'Art/Temperance',
