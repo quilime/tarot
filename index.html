@@ -27,6 +27,9 @@ End Year <input type="text" id="EndYear"><br /><br />
     $("console").value = getTSV(getChart(_BIRTHYEAR, _M, _D, _ENDYEAR));
   }
 
+  const d = new Date();
+  $("EndYear").value = d.getFullYear();
+
 </script>
 
 
