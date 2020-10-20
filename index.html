@@ -52,14 +52,19 @@ Until
     const nowY = now.getFullYear();
 
     const bYSel = $("BirthYear");
-    const eYSel = $("EndYear");
     for (let y = nowY-120; y <= nowY; y++) {
-      const o1 = create("option");
-      const o2 = create("option");
-      o1.text = o2.text = y;
-      o1.value = o2.value = y;
-      bYSel.add(o1);
-      eYSel.add(o2);
+      const o = create("option");
+      o.text = y;
+      o.value = y;
+      bYSel.add(o);
+    }
+
+    const eYSel = $("EndYear");
+    for (let y = nowY-120; y <= nowY+100; y++) {
+      const o = create("option");
+      o.text = y;
+      o.value = y;
+      eYSel.add(o);
     }
 
     const mSel = $("M");
