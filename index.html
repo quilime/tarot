@@ -5,10 +5,30 @@
 </head>
 <body>
 
+Birthday
+<select id="BirthYear">
+  <option disabled selected="selected">Year</option>
+</select>
+
+<select id="M">
+<option disabled selected="selected">Month</option>
+</select>
+
+<select id="D">
+<option disabled selected="selected">Day</option>
+</select>
+
+Until
+<select id="EndYear">
+  <option disabled selected="selected">Year</option>
+</select>
+
+
+<!--
 Birth Year <input type="text" id="BirthYear"><br />
 Birth Month <input type="text" id="M"><br />
 Birth Day <input type="text" id="D"><br />
-End Year <input type="text" id="EndYear"><br /><br />
+End Year <input type="text" id="EndYear"><br /><br /> -->
 <button onClick="calc();">Calc</button><br /><br />
 <textarea id="console" style="width:600px;height:400px;"></textarea><br />
 <a href="https://github.com/quilime/tarot">source code</a>
@@ -19,6 +39,10 @@ End Year <input type="text" id="EndYear"><br /><br />
     return document.getElementById(id);
   }
 
+  const create = (el) => {
+    return document.createElement(el);
+  }
+
   const calc = () => {
     const _BIRTHYEAR = $("BirthYear").value;
     const _M = $("M").value;
@@ -27,8 +51,44 @@ End Year <input type="text" id="EndYear"><br /><br />
     $("console").value = getTSV(getChart(_BIRTHYEAR, _M, _D, _ENDYEAR));
   }
 
-  const d = new Date();
-  $("EndYear").value = d.getFullYear();
+  window.onload = (event) => {
+    const now = new Date();
+    const nowY = now.getFullYear();
+
+    var bYSel = $("BirthYear");
+    var eYSel = $("EndYear");
+    for (var y = nowY-120; y <= nowY; y++) {
+      var o1 = create("option");
+      var o2 = create("option");
+      o1.text = o2.text = y;
+      o1.value = o2.value = y;
+      bYSel.add(o1);
+      eYSel.add(o2);
+    }
+
+    var mSel = $("M");
+    for (var m = 1; m <= 12; m++) {
+      var o = create("option");
+      o.text = m;
+      o.value = m;
+      mSel.add(o);
+    }
+
+    var dSel = $("D");
+    for (var m = 1; m <= 31; m++) {
+      var o = create("option");
+      o.text = m;
+      o.value = m;
+      dSel.add(o);
+    }
+
+    bYSel.value = nowY-20;
+    mSel.value = 1;
+    dSel.value = 1;
+    eYSel.value = nowY;
+  };
+
+
 
 </script>
 
