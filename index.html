@@ -2,6 +2,11 @@
 <head>
   <title>tarot</title>
   <script src="tarot.js"></script>
+  <style>
+    table td {
+      padding:0 1em;
+    }
+  </style>
 </head>
 <body>
 
@@ -26,8 +31,20 @@ Until
 </select>
 
 <button onClick="calc();">Calc</button><br /><br />
-<textarea id="console" style="width:600px;height:400px;"></textarea><br />
-<a href="https://github.com/quilime/tarot">source code</a>
+
+<table id="table">
+  <thead>
+    <tr style="font-weight:bold;">
+      <td>Year</td>
+      <td>Age</td>
+      <td>Growth</td>
+      <td>Universal</td>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<a style="position:absolute; top:1em; right:1em;" href="https://github.com/quilime/tarot">source code</a>
 
 <script>
 
@@ -35,8 +52,30 @@ Until
     return document.getElementById(id);
   }
 
+  const $t = (tag) => {
+    return document.getElementsByTagName(tag);
+  }
+
   const create = (el) => {
     return document.createElement(el);
+  }
+
+  const populateTable = (chart) => {
+    var tBody = create('tbody');
+    for (i in chart) {
+      const r = chart[i];
+      const row = tBody.insertRow(tBody.rows.length);
+      const yearCell = row.insertCell(0);
+      const ageCell = row.insertCell(1);
+      const growthCell = row.insertCell(2);
+      const uniCell = row.insertCell(3);
+      yearCell.innerHTML = r.year;
+      ageCell.innerHTML = r.age;
+      growthCell.innerHTML = r.growth;
+      uniCell.innerHTML = r.uni;
+    }
+    var oldTbody = $t("tbody")[0];
+    table.replaceChild(tBody, oldTbody)
   }
 
   const calc = () => {
@@ -44,7 +83,11 @@ Until
     const _M = $("M").value;
     const _D = $("D").value;
     const _ENDYEAR = $("EndYear").value;
-    $("console").value = getTSV(getChart(_BIRTHYEAR, _M, _D, _ENDYEAR));
+    chart = getChart(_BIRTHYEAR, _M, _D, _ENDYEAR);
+
+    populateTable(chart);
+
+    console.log(getTSV(chart));
   }
 
   window.onload = (event) => {
