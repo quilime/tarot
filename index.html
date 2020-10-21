@@ -3,8 +3,19 @@
   <title>tarot</title>
   <script src="tarot.js"></script>
   <style>
+    table {
+      float:left;
+    }
     table td {
       padding:0 1em;
+    }
+    #info {
+      float:left;
+      margin-left:1em;
+      max-width:400px;
+    }
+    #info h4 {
+      margin-top:3px;
     }
   </style>
 </head>
@@ -44,6 +55,8 @@ Until
   <tbody></tbody>
 </table>
 
+<div id="info"></div>
+
 <a style="position:absolute; top:1em; right:1em;" href="https://github.com/quilime/tarot">source code</a>
 
 <script>
@@ -60,6 +73,16 @@ Until
     return document.createElement(el);
   }
 
+  const createA = (c) => {
+    const a = create("a");
+    a.setAttribute("href", "#");
+    a.innerHTML = `${c.num} ${c.name}`;
+    a.addEventListener("click", () => {
+      $("info").innerHTML = `<h4>${c.num} ${c.name}</h4>${c.desc}`;
+    });
+    return a;
+  }
+
   const populateTable = (chart) => {
     var tBody = create('tbody');
     for (i in chart) {
@@ -71,8 +94,8 @@ Until
       const uniCell = row.insertCell(3);
       yearCell.innerHTML = r.year;
       ageCell.innerHTML = r.age;
-      growthCell.innerHTML = r.growth;
-      uniCell.innerHTML = r.uni;
+      growthCell.appendChild(createA(r.growth));
+      uniCell.appendChild(createA(r.uni));
     }
     var oldTbody = $t("tbody")[0];
     table.replaceChild(tBody, oldTbody)
