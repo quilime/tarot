@@ -1,91 +1,91 @@
 const majorArcana = [
   {
     "name": "Fool",
-    "desc": "In spiritual matters, represents ideas, thoughts, spirituality, that which endeavors to transcend Earth. In material matters may show, if ill-dignified, folly, eccentricity, even mania. It represents the original, subtle, sudden impulse coming from a strange and unexpected quarter."
+    "desc": "Courage; state of no fear; extacy and peak experience"
   },
   {
     "name": "Magician",
-    "desc": "Skill. Wisdom. Adroitness. Elasticity. Craft. Conning. Deceit. Theft. Sometimes occult wisdom or power. Messages. Business transactions. Ill-dignified: Learning or intelligence interfering with the matter at hand."
+    "desc": "Communication and timing"
   },
   {
     "name": "High Priestess",
-    "desc": "Pure, exalted and gracious influence enters the matter, hence change, alternation, increase and decrease, fluctuation. May be led away by enthusiasm unless careful balance maintained."
+    "desc": "Intuition, self-trust, and self-resourcefulness"
   },
   {
     "name": "Empress",
-    "desc": "Love. Beauty. Happiness. Pleasure. Success. Fruitfulness. Good fortune. Graciousness. Elegance. Gentleness. Ill-dignified: Dissipation. Debauchery. Idleness. Sensuality."
+    "desc": "Love with wisdom: The Earth mother"
   },
   {
     "name": "Emperor",
-    "desc": "War. Conquest. Victory. Strife. Stability. Power. Originality. Government. Energy. Ambition. Ill-dignified: Over-weening pride. Megalomania. Rashness. Ill-temper."
+    "desc": "Personal power and leadership"
   },
   {
     "name": "Hierophant",
-    "desc": "Divine wisdom. Inspiration. Stubborn strength. Toil. Endurance. Persistence. Teaching. Help from superiors. Patience. Organization. Peace. Goodness of heart. Occult force voluntarily invoked."
+    "desc": "Learning and Teaching"
   },
   {
     "name": "Lovers",
-    "desc": "Openness to inspiration. Intuition. Intelligence. Childishness. Attraction. Beauty. Love. Ill-dignified: Self-contradiction. Instability. Indecision. Union in a shallow degree with others. Superficiality. "
+    "desc": "Art and craft of relationship. The journey of the twins"
   },
   {
     "name": "Chariot",
-    "desc": "Triumph. Victory. Hope. Obedience. Faithfulness. Health. Success, though sometimes not enduring. Authority under authority. Ill-dignified: Violence in maintaining traditional ideas. Lust of destruction."
+    "desc": "Change. Movement. Combination of stillness and activity"
   },
   {
     "name": "Adjustment/Justice",
-    "desc": "Justice. Balance. Adjustment. Suspension of action pending decision. May refer to lawsuits, trials, marriages, treaties, etc."
+    "desc": "Balance, Justice, Realignment"
   },
   {
     "name": "Hermit",
-    "desc": "Illumination from within. Divine inspiration. Wisdom. Prudence. Circumspection. Retirement from participation in current events."
+    "desc": "Completion, introspection and space"
   },
   {
     "name": "Wheel of Fortune",
-    "desc": "Change of fortune, generally good. Destiny."
+    "desc": "Opportunity, breakthrough and prosperity"
   },
   {
     "name": "Strength/Lust",
-    "desc": "Courage. Strength. Energy. Use of magical power. Control of the life force. Great love affair. Resort to magic."
+    "desc": "Strength, passion, and lustre"
   },
   {
     "name": "Hanged Man",
-    "desc": "Redemption through sacrifice. Enforced sacrifice. Suffering. Ill-dignified: Punishment. Loss. Defeat. Failure. Death."
+    "desc": "Surrender, breaking old patterns"
   },
   {
     "name": "Death/Rebirth",
-    "desc": "Transformation. Change voluntary or involuntary, perhaps sudden and unexpected. Apparent death or destruction that is illusory when viewed from a higher perspective."
+    "desc": "Letting go and moving forward. Release and detachement"
   },
   {
     "name": "Art/Temperance",
-    "desc": "Combination of forces. Realization. Action based on accurate calculation. Economy. management. Success after elaborate maneuvers. The way of escape."
+    "desc": "Integration, synthesis, synergy"
   },
   {
     "name": "Devil/Pan",
-    "desc": "Blind impulse. Irresistibly strong and unscrupulous person. Ambition. Temptation. Obsession. Secret plan about to be executed. hard work. Endurance. Aching discontent. Materialism. Fate."
+    "desc": "Mirth and humor at what 'bedevils' us"
   },
   {
     "name": "Tower",
-    "desc": "Quarrel. Combat. Danger. Ruin. Destruction of plans. Ambition. Courage. Sudden death. Escape from prison and all it implies."
+    "desc": "Restoration and renovation. De-structuring old forms"
   },
   {
     "name": "Star",
-    "desc": "Hope. Unexpected help. Clarity of vision. Spiritual insight. Ill-dignified: Error of judgment. Dreaminess. Disappointment."
+    "desc": "Self-Sufficiency and talent recognized by others"
   },
   {
     "name": "Moon",
-    "desc": "Illusion. Deception. Bewilderment. Hysteria. Madness. Dreaminess. Falsehood. Voluntary change. The brink of an important change. This card is very sensitive to dignity."
+    "desc": "Choice, authenticity vs dutifulness"
   },
   {
     "name": "Sun",
-    "desc": "Glory. Gain. Riches. Triumph. Pleasure. Frankness. Truth. Shamelessness. Manifestation. Recovery from sickness, but sometimes sudden death. Ill-dignified: Arrogance. Vanity."
+    "desc": "Collaboration, teamwork and partnership. Co-operation"
   },
   {
     "name": "Aeon/Judgment",
-    "desc": "Final decision concerning the past. New current for the future. Always represents the taking of a definite step."
+    "desc": "Good judgement and discernment"
   },
   {
     "name": "Universe",
-    "desc": "The essence of the question itself. Synthesis. The end of the matter. Delay. Opposition. Inertia. Perseverance. Patience. The crystallization of the whole matter involved."
+    "desc": "Totality, individuation and wholeness"
   }
 ];
 
