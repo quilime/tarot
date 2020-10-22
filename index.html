@@ -38,20 +38,23 @@ Birthday
 <select id="BirthYear">
   <option disabled selected="selected">Year</option>
 </select>
-
+/
 <select id="M">
 <option disabled selected="selected">Month</option>
 </select>
-
+/
 <select id="D">
 <option disabled selected="selected">Day</option>
 </select>
 
+&nbsp;
 Until
 
 <select id="EndYear">
   <option disabled selected="selected">Year</option>
 </select>
+
+&nbsp;
 
 <button onClick="calc();">Calc</button><br /><br />
 
@@ -105,22 +108,28 @@ Until
   };
 
   const populateTable = (chart) => {
+    if (chart.length <= 0) return;
+
     $("table").style.visibility = "visible";
     var tBody = create('tbody');
-    let separator = 0;
+    let separator = chart[0].growth.num - 1;
     for (i in chart) {
+
       const r = chart[i];
       const row = tBody.insertRow(tBody.rows.length);
       const yearCell = row.insertCell(0);
       const ageCell = row.insertCell(1);
       const growthCell = row.insertCell(2);
       const uniCell = row.insertCell(3);
+
       yearCell.innerHTML = r.year;
       ageCell.innerHTML = r.age;
       growthCell.appendChild(createA(r.growth));
       uniCell.appendChild(createA(r.uni));
-      if (separator > r.growth.num)
+
+      if (separator != r.growth.num -1)
         row.className = "separator";
+
       separator = r.growth.num;
     }
     var oldTbody = $t("tbody")[0];
