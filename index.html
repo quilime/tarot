@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>tarot</title>
   <script src="tarot.js"></script>
   <style>
@@ -33,30 +34,28 @@
 </head>
 <body>
 
-Birthday
-
+Birth
+Year
 <select id="BirthYear">
   <option disabled selected="selected">Year</option>
-</select>
-/
+</select><br />
+
+Month
 <select id="M">
 <option disabled selected="selected">Month</option>
-</select>
-/
+</select><br />
+
+Day
 <select id="D">
 <option disabled selected="selected">Day</option>
-</select>
+</select><br />
 
-&nbsp;
 Until
-
 <select id="EndYear">
   <option disabled selected="selected">Year</option>
-</select>
+</select><br />
 
-&nbsp;
-
-<button onClick="calc();">Calc</button><br /><br />
+<button onClick="calc();">Calculate</button><br /><br />
 
 <table id="table" cellpadding="0" cellspacing="0">
   <thead>
