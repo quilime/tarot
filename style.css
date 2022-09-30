@@ -1,0 +1,41 @@
+body, input, td {
+  font-size:1em;
+  font-family: serif;
+}
+
+body {
+  padding:0em;
+}
+
+a {
+  color:#000;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom:1px solid #000;
+}
+
+table {
+  visibility: hidden;
+  float:left;
+  margin-bottom:2em;
+}
+
+table td {
+  padding:0 1em;
+}
+
+#info {
+  float:left;
+  margin-left:1em;
+  max-width:400px;
+}
+
+#info h4 {
+  margin-top:0px;
+}
+
+tr.separator td {
+  border-top:1px solid #777;
+}
