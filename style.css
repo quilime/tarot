@@ -1,5 +1,5 @@
 body, input, td {
-  font-size:1em;
+  line-height: 1.5em;
   font-family: serif;
 }
 
@@ -24,6 +24,7 @@ table {
 
 table td {
   padding:0 1em;
+  white-space:nowrap;
 }
 
 #info {
